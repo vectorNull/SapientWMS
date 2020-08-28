@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const inventorySchema = new Schema({
+const partSchema = new Schema({
     partNumber: String,
     description: String,
     Quantity: Number,
-    ReceivedDate: Date
+    InvoiceNum: String
 });
 
-module.exports = mongoose.model('Inventory', inventorySchema);
+module.exports = mongoose.model('Part', partSchema);

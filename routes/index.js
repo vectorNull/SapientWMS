@@ -11,19 +11,19 @@ router.get('/auth/google', passport.authenticate(
 router.get('/oauth2callback', passport.authenticate(
   'google',
   {
-    successRedirect : '/inventories',
-    failureRedirect : '/inventories'
+    successRedirect : '/parts',
+    failureRedirect : '/parts'
   }
 ));
 
 router.get('/logout', function(req, res){
   req.logout();
-  res.redirect('/inventories');
+  res.redirect('/parts');
 });
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.redirect('/inventories');
+  res.redirect('/parts');
 });
 
 module.exports = router;
