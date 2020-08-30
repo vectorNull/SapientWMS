@@ -3,8 +3,8 @@ const Schema = mongoose.Schema;
 
 const partSchema = new Schema({
     partNumber: String,
-    description: String,
     Quantity: Number,
+    description: String,
     InvoiceNum: String
 });
 

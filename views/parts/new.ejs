@@ -1,5 +1,25 @@
 <%- include('../partials/header') %>
 <h1>New Part/Invoice Page</h1>
 
+<h2>Enter a new invoice:</h2>
+
+<form id="new-form" action="/parts" method="POST">
+    <label>Invoice Number: 
+        <input type="text" name="invoiceNumber">
+    </label><br><br>
+    <label>Part Number:
+        <input type="text" name="partNumber">
+    </label><br><br>
+    <label >Description:
+        <input type="text" name="description">
+    </label><br><br>
+    <label>Quantity
+        <input type="number" name="quantity">
+    </label><br><br>
+    <label>Date Received: 
+        <input type="date" name="dateReceived">
+    </label><br><br>
+    <input type="submit" value="Receive">
+</form>
 
 <%- include('../partials/footer') %>

@@ -3,8 +3,8 @@ const router = express.Router();
 const partsCtrl = require('../controllers/parts');
 
 router.get('/', partsCtrl.index);
-router.get('/:id', partsCtrl.show);
 router.get('/new', partsCtrl.new);
+router.get('/:id', partsCtrl.show);
 
 
 module.exports = router;

@@ -24,6 +24,7 @@ function create(req, res) {
     const invoice = new Invoice(req.body);
     invoice.save(function (err) {
         if (err) return res.render('parts/new');
+        console.log(invoice);
         res.redirect('/parts')
     });
 }

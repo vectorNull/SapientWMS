@@ -3,9 +3,10 @@ const Schema = mongoose.Schema;
 
 const invoiceSchema = new Schema({
     invoiceNumber: String,
-    dateReceived: Date,
     quantity: Number,
-    partNumber: String 
+    description: String,
+    partNumber: String, 
+    dateReceived: Date
 });
 
 module.exports = mongoose.model('Invoice', invoiceSchema);

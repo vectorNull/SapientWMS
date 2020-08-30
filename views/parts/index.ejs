@@ -18,15 +18,33 @@
     </div>
   </nav>
 
-<!-- <a href="/">HOME</a>
-<ul class="right">
-	<li>
-	<% if (user) { %>
-		<a href="/logout"><i class="material-icons left"></i>Log Out</a>
-	<% } else { %>
-		<a href="/auth/google"><i class="material-icons left"></i>Login with Google</a>
-	<% } %>
-	</li>
-</ul> -->
+<table id="inventory">
+
+<thead>
+  <tr>
+    <th><h2>Part Number</h2></th>
+    <th><h2>Quantity</h2></th>
+    <th><h2>Description</h2></th>
+    <th><h2>Invoice Number</h2></th>
+  </tr>
+  <tbody>
+    <% parts.forEach(p => { %>
+      <tr>
+        <td><%= p.partNumber  %></td>
+        <td><%= p.quantity  %></td>
+        <td><%= p.description  %></td>
+        <td><%= p.invoiceNum  %></td>
+      </tr>
+      
+      <% }) %>
+    <tr>
+
+    </tr>
+  </tbody>
+</thead>
+
+
+
+</table>
 
 <%- include('../partials/footer') %>
