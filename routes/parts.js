@@ -4,6 +4,7 @@ const partsCtrl = require('../controllers/parts');
 
 router.get('/', partsCtrl.index);
 router.get('/new', partsCtrl.new);
+//router.post('/', partsCtrl.create);
 router.get('/:id', partsCtrl.show);
 
 

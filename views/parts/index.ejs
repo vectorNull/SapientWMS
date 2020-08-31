@@ -22,10 +22,10 @@
 
 <thead>
   <tr>
-    <th><h2>Part Number</h2></th>
-    <th><h2>Quantity</h2></th>
-    <th><h2>Description</h2></th>
-    <th><h2>Invoice Number</h2></th>
+    <th><h4>Part Number</h2></th>
+    <th><h4>Quantity</h2></th>
+    <th><h4>Description</h2></th>
+    <th><h4>Invoice Number</h2></th>
   </tr>
   <tbody>
     <% parts.forEach(p => { %>
@@ -33,7 +33,7 @@
         <td><%= p.partNumber  %></td>
         <td><%= p.quantity  %></td>
         <td><%= p.description  %></td>
-        <td><%= p.invoiceNum  %></td>
+        <td><%= p.invoices  %></td>
       </tr>
       
       <% }) %>

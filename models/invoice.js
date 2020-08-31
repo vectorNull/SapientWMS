@@ -3,9 +3,9 @@ const Schema = mongoose.Schema;
 
 const invoiceSchema = new Schema({
     invoiceNumber: String,
-    quantity: Number,
-    description: String,
     partNumber: String, 
+    description: String,
+    quantity: Number,
     dateReceived: Date
 });
 

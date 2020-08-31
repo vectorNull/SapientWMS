@@ -3,9 +3,9 @@ const Schema = mongoose.Schema;
 
 const partSchema = new Schema({
     partNumber: String,
-    Quantity: Number,
+    quantity: Number,
     description: String,
-    InvoiceNum: String
+    invoices: [{type: Schema.Types.ObjectId, ref: 'Invoice'}]
 });
 
 module.exports = mongoose.model('Part', partSchema);

@@ -1,5 +1,21 @@
 <%- include('../partials/header') %>
 <h1>Show Page</h1>
 
+<section id="show-page">
+  <div>Part Number: </div>
+  <div><%= part.partNumber %></div>
+  <div>Description: </div>
+  <div><%= part.descrption %></div>
+  <div>Quantity: </div>
+  <div><%= part.quantity %></div>
+  <div>Now Showing: </div>
+  <div>Invoices:</div>
+  <ul>
+    <%- part.invoices.map(i => 
+      `<li>${i.invoiceNumber}</li>`
+    ).join(' ') %>
+  </ul>
+</section>
+
 
 <%- include('../partials/footer') %>
