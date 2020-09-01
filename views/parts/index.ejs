@@ -4,8 +4,9 @@
 <nav>
     <div class="nav-wrapper">
       <a href="#" class="brand-logo">Sapient WMS</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down"> 
-        <li><a href="/parts/new">Receive Part</a></li>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/parts/new">Add Part</a></li> 
+        <li><a href="/invoices/new">Receive Part</a></li>
         <li><a href="/">Complete Inventory</a></li>   
         <li>
             <% if (user) { %>
@@ -33,7 +34,6 @@
         <td><%= p.partNumber  %></td>
         <td><%= p.quantity  %></td>
         <td><%= p.description  %></td>
-        <td><%= p.invoices  %></td>
       </tr>
       
       <% }) %>

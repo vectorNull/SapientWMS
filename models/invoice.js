@@ -2,10 +2,9 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const invoiceSchema = new Schema({
+    part: {type: Schema.Types.ObjectId, ref: 'Part'},
     invoiceNumber: String,
-    partNumber: String, 
-    description: String,
-    quantity: Number,
+    invoiceQuantity: Number,
     dateReceived: Date
 });
 

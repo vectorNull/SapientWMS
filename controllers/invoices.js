@@ -6,12 +6,11 @@ module.exports = {
 };
 
 function newInvoice(req, res) {
-    res.render('parts/new', { title: 'New Invoice'})
+    res.render('invoices/new', { title: 'New Invoice'})
 };
 
 function create(req, res) {
     const invoice = new Invoice(req.body);
-    
     invoice.save(function (err) {
         if (err) return res.render('parts/new');
         res.redirect('/parts')
