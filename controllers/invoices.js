@@ -12,7 +12,7 @@ function newInvoice(req, res) {
 function create(req, res) {
     const invoice = new Invoice(req.body);
     invoice.save(function (err) {
-        if (err) return res.render('parts/new');
+        if (err) return res.render('invoices/new');
         res.redirect('/parts')
     });
 }

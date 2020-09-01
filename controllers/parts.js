@@ -2,6 +2,7 @@ const Part = require('../models/part');
 
 
 module.exports = {
+    index,
     create,
     new: newPart
 };
@@ -19,17 +20,12 @@ function create(req, res) {
     });
 }
 
-
-
-
-
-
-// function index (req, res) {
-//     console.log('We are here');
-//     Part.find({}, function(err, parts) {
-//         res.render('parts/index', { title: 'Complete Inventory', parts })
-//     });
-// }
+function index (req, res) {
+    console.log('We are here');
+    Part.find({}, function(err, parts) {
+        res.render('parts/index', { title: 'Complete Inventory', parts })
+    });
+}
 
 // function show(req, res) {
 //     Part.findById(req.params.id, function(err, part) {
