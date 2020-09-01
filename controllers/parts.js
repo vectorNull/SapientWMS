@@ -4,7 +4,8 @@ const Part = require('../models/part');
 module.exports = {
     index,
     create,
-    new: newPart
+    new: newPart,
+    show
 };
 
 function newPart(req, res) {
@@ -27,11 +28,11 @@ function index (req, res) {
     });
 }
 
-// function show(req, res) {
-//     Part.findById(req.params.id, function(err, part) {
-//         res.render('parts/show', { title: 'Part Details', part})
-//     });
-// }
+function show(req, res) {
+    Part.findById(req.params.id, function(err, part) {
+        res.render('parts/show', { title: 'Part Details', part})
+    });
+}
 
 
 
