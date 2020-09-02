@@ -2,17 +2,19 @@
 
 <h2>Enter a new invoice:</h2>
 
+<p>Select part from dropdown: 
+    <select>
+        <% parts.forEach(p => { %>
+            <option><%= p.partNumber %></option>
+        <% }) %>
+    </select>
+</p>
+
 <form id="new-form" action="/invoices" method="POST">
     <label>Invoice Number: 
         <input type="text" name="invoiceNumber">
     </label><br><br>
-    <label>Part Number:
-        <input type="text" name="partNumber">
-    </label><br><br>
-    <label >Description:
-        <input type="text" name="description">
-    </label><br><br>
-    <label>Quantity
+    <label>Quantity to be received:
         <input type="number" name="quantity">
     </label><br><br>
     <label>Date Received: 

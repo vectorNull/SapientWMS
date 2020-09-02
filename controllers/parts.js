@@ -1,4 +1,5 @@
 const Part = require('../models/part');
+const Invoice = require('../models/invoice');
 
 
 module.exports = {

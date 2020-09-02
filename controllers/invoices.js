@@ -1,4 +1,5 @@
 const Invoice = require('../models/invoice');
+const Part = require('../models/part');
 
 module.exports = {
     create,
@@ -6,7 +7,11 @@ module.exports = {
 };
 
 function newInvoice(req, res) {
-    res.render('invoices/new', { title: 'New Invoice'})
+    Part.find({}, (err, parts) => {
+        res.render('invoices/new', {
+            title: 'Add New Invoice', parts
+        })
+    })
 };
 
 function create(req, res) {
