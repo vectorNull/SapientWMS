@@ -1,16 +1,39 @@
 <%- include('../partials/header') %>
 
-<h2>Enter a new invoice:</h2>
 
-<p>Select part from dropdown: 
-    <select>
-        <% parts.forEach(p => { %>
-            <option><%= p.partNumber %></option>
-        <% }) %>
-    </select>
-</p>
+    
+       
+       <div class="container center-align">
+        <h3>Receive Part by Invoice:</h3>
+        <form id="new-form" action="/invoices" method="POST">
+            <label>Select part from dropdown:
+                <div class="input-field col s12 ">
+                <select class="browser-default" name="part">
+                    <% parts.map(p => { %>
+                        <option value="<%= p._id %>"><%= p.description %></option>
+                    <% }) %>
+                </select>
+                </div>
+            </label><br><br>
+            <label>Invoice Number: 
+                <input type="text" class="center-align" name="invoiceNumber">
+            </label><br><br>
+            <label>Quantity to be received:
+                <input type="number" class="center-align"name="invoiceQuantity">
+            </label><br><br>
+            <label>Date Received: 
+                <input type="date" class="center-align" name="dateReceived">
+            </label><br><br>
+            <input type="submit" value="Receive">
+        </form>
+       </div>
+       
+   
 
-<form id="new-form" action="/invoices" method="POST">
+
+
+
+<!-- <form id="new-form" action="/invoices" method="POST">
     <label>Invoice Number: 
         <input type="text" name="invoiceNumber">
     </label><br><br>
@@ -21,6 +44,6 @@
         <input type="date" name="dateReceived">
     </label><br><br>
     <input type="submit" value="Receive">
-</form>
+</form> -->
 
 <%- include('../partials/footer') %>

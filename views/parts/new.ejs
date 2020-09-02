@@ -1,15 +1,16 @@
 <%- include('../partials/header') %>
 
-<h2>Enter a new invoice:</h2>
 
+<div class="container center-align">
+<h4>Enter a NSN and Part Description:</h4>
 <form id="new-form" action="/parts" method="POST">
-    <label>Part Number:
-        <input type="text" name="partNumber">
+    <label>National Stock Number:
+        <input class="center-align" type="text" name="partNumber">
     </label><br><br>
     <label >Description:
-        <input type="text" name="description">
+        <input class="center-align" type="text" name="description">
     </label><br><br>
-    <input type="submit" value="Receive">
+    <input class="center-align" type="submit" value="Receive">
 </form>
-
+</div>
 <%- include('../partials/footer') %>

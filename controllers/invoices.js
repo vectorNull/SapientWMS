@@ -3,7 +3,7 @@ const Part = require('../models/part');
 
 module.exports = {
     create,
-    new: newInvoice
+    new: newInvoice,
 };
 
 function newInvoice(req, res) {
@@ -16,8 +16,14 @@ function newInvoice(req, res) {
 
 function create(req, res) {
     const invoice = new Invoice(req.body);
-    invoice.save(function (err) {
-        if (err) return res.render('invoices/new');
-        res.redirect('/parts')
-    });
+    invoice.save(function(err) {
+        Part.findById(req.body.part, function(err, part) {
+            const newQuantity = part.quantity + invoice.invoiceQuantity;
+            Part.findByIdAndUpdate(part._id, { quantity: newQuantity }, function(err, newPart) {
+                if (err) return console.log(err);
+                res.redirect('/parts')
+            })
+        })
+    })
 }
+

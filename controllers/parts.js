@@ -31,7 +31,9 @@ function index (req, res) {
 
 function show(req, res) {
     Part.findById(req.params.id, function(err, part) {
-        res.render('parts/show', { title: 'Part Details', part})
+        Invoice.find({ part: part._id }, function(err, invoices) {
+            res.render('parts/show', { title: 'Part Details', part, invoices})
+        });
     });
 }
 

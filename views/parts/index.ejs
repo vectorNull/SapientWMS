@@ -1,39 +1,22 @@
 <%- include('../partials/header') %>
 
 
-<nav>
-    <div class="nav-wrapper">
-      <a href="#" class="brand-logo">Sapient WMS</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="/parts/new">Add Part</a></li> 
-        <li><a href="/invoices/new">Receive Part</a></li>
-        <li><a href="/">Complete Inventory</a></li>   
-        <li>
-            <% if (user) { %>
-            <a href="/logout">Log Out</a>
-            <% } else { %>
-            <a href="/auth/google"></i>Login with Google</a>
-            <% } %>
-        </li>
-      </ul>
-    </div>
-  </nav>
 
-<table id="inventory">
 
+<table id="inventory" class="highlight centered responsive-table">
 <thead>
   <tr>
-    <th><h4>Part Number</h2></th>
-    <th><h4>Quantity</h2></th>
-    <th><h4>Description</h2></th>
-    <th><h4>Part Details</h2></th>
+    <th><h2>NSN</h2></th>
+    <th><h2>Description</h2></th>
+    <th><h2>Qty in Stock</h2></th>
+    <th><h2>Part Details</h2></th>
   </tr>
   <tbody>
     <% parts.forEach(p => { %>
       <tr>
         <td><%= p.partNumber  %></td>
-        <td><%= p.quantity  %></td>
         <td><%= p.description  %></td>
+        <td><%= p.quantity  %></td>
         <td><a href="/parts/<%= p._id %>">Details</a></td>
       </tr>
       
