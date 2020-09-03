@@ -21,14 +21,20 @@
       <th>Invoice Number</th>
       <th>Qty Received</th>
       <th>Date Received</th>
+      <th>Delete?</th>
     </tr>
   </thead>
   <tbody>
     <% invoices.map(i => { %>
     <tr>
       <td><%= i.invoiceNumber %></td>
-      <td><%= i.invoiceQty %></td>
+      <td><%= i.invoiceQuantity %></td>
       <td><%= i.dateReceived %></td>
+      <td>
+        <form action="/invoices/<%= i.id %>?_method=DELETE" method="POST">
+          <a href="/parts/<%= i.id %>">delete</a>
+      </form>
+      </td>
       <% }) %>
     </tr>
   </tbody>

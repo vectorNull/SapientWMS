@@ -4,6 +4,7 @@ const Part = require('../models/part');
 module.exports = {
     create,
     new: newInvoice,
+    delete: deleteInvoice
 };
 
 function newInvoice(req, res) {
@@ -26,3 +27,9 @@ function create(req, res) {
     })
 }
 
+function deleteInvoice(req, res) {
+    Part.findById(req.body.part, function(err, part) {
+        const idx = Invoice.part.indexOf(req.param._id);
+        Invoice.part.splice(idx);
+    })
+}
