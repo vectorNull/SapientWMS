@@ -2,7 +2,7 @@ const Part = require('../models/part');
 
 module.exports = {
     new: newIssue,
-    create,
+    deleteQty
 }
 
 function newIssue(req, res) {
@@ -13,6 +13,12 @@ function newIssue(req, res) {
     })
 };
 
-function create() {
-
+function deleteQty(req, res) {
+    Part.findById(req.body.part, function(err, part) {
+        const newQuantity = part.issueQuantity - issueQuantity;
+        Part.findByIdAndUpdate(part._id, { quantity: newQuantity }, function(err) {
+            if (err) return console.log(err);
+            res.redirect('/parts')
+        })
+    })
 }

@@ -5,7 +5,7 @@ const issuesCtrl = require('../controllers/issues');
 
 
 router.get('/new', isLoggedIn, issuesCtrl.new);
-router.post('/',isLoggedIn, issuesCtrl.create);
+router.post('/',isLoggedIn, issuesCtrl.deleteQty);
 
 function isLoggedIn(req, res, next) {
     if ( req.isAuthenticated() ) return next();
