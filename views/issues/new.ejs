@@ -1,0 +1,22 @@
+<%- include('../partials/header') %>
+
+<div class="container center-align">
+    <h3>Select part to be issued:</h3>
+    <form id="new-form" action="/invoices" method="POST">
+        <label>Select part from dropdown:
+            <div class="input-field col s12 ">
+            <select class="browser-default" name="part">
+                <% parts.map(p => { %>
+                    <option value="<%= p._id %>"><%= p.description %></option>
+                <% }) %>
+            </select>
+            </div>
+        </label><br><br>
+        <label>Quantity to be issued:
+            <input type="number" class="center-align"name="invoiceQuantity">
+        </label><br><br>
+        <input type="submit" value="Receive">
+    </form>
+   </div>
+
+<%- include('../partials/footer') %>
