@@ -3,7 +3,7 @@ const router = express.Router();
 const invoicesCtrl = require('../controllers/invoices');
 
 router.post('/invoices', isLoggedIn, invoicesCtrl.create);
-router.get('/invoices/new', invoicesCtrl.new);
+router.get('/invoices/new',isLoggedIn, invoicesCtrl.new);
 
 function isLoggedIn(req, res, next) {
     if ( req.isAuthenticated() ) return next();

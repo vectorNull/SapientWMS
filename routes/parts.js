@@ -4,7 +4,7 @@ const partsCtrl = require('../controllers/parts');
 
 
 router.get('/', partsCtrl.index);
-router.get('/new', partsCtrl.new);
+router.get('/new',isLoggedIn, partsCtrl.new);
 router.get('/:id', partsCtrl.show);
 router.post('/', isLoggedIn, partsCtrl.create);
 
