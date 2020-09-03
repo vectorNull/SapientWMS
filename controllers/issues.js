@@ -15,7 +15,7 @@ function newIssue(req, res) {
 
 function deleteQty(req, res) {
     Part.findById(req.body.part, function(err, part) {
-        const newQuantity = part.issueQuantity - issueQuantity;
+        const newQuantity = rec.body.issueQuantity - part.quantity;
         Part.findByIdAndUpdate(part._id, { quantity: newQuantity }, function(err) {
             if (err) return console.log(err);
             res.redirect('/parts')

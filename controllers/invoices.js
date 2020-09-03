@@ -20,7 +20,6 @@ function create(req, res) {
         Part.findById(req.body.part, function(err, part) {
             const newQuantity = part.quantity + invoice.invoiceQuantity;
             Part.findByIdAndUpdate(part._id, { quantity: newQuantity }, function(err, newPart) {
-                if (err) return console.log(err);
                 res.redirect('/parts')
             })
         })

@@ -23,7 +23,6 @@ function create(req, res) {
 }
 
 function index (req, res) {
-    console.log('We are here');
     Part.find({}, function(err, parts) {
         res.render('parts/index', { title: 'Complete Inventory', parts })
     });
