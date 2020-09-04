@@ -9,6 +9,7 @@ Technologies used:
 * CSS
 * Javascript
 * NodeJS
+* MongoDB / Mongoose
 * Express
 * OAuth
 * Materialize
