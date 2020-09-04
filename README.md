@@ -14,6 +14,7 @@ Technologies used:
 * Materialize
 
 [Link to Sapient WMS](https://sapientwms.herokuapp.com/parts)
+
 [Link to Trello](https://trello.com/b/nW98ffym/sapient-wms)
 
 Next steps:
