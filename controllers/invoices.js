@@ -28,8 +28,8 @@ function create(req, res) {
 }
 
 function deleteInvoice(req, res) {
-    Part.findById(req.body.part, function(err, part) {
-        const idx = Invoice.part.indexOf(req.param._id);
-        Invoice.part.splice(idx);
-    })
+    console.log('-----HERE------');
+    Invoice.findByIdAndDelete(req.params.id, function (err, deletedInvoice) {
+        res.redirect(`/parts/${deletedInvoice.part}`)
+    });
 }

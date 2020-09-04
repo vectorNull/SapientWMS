@@ -6,10 +6,10 @@
 <table id="inventory" class="highlight centered responsive-table">
 <thead>
   <tr>
-    <th><h2>NSN</h2></th>
-    <th><h2>Description</h2></th>
-    <th><h2>Qty in Stock</h2></th>
-    <th><h2>Part Details</h2></th>
+    <th><h3>Natl Stock Num (NSN)</h3></th>
+    <th><h3>Description</h3></th>
+    <th><h3>Qty in Stock</h3></th>
+    <th><h3>Part Details</h3></th>
   </tr>
   <tbody>
     <% parts.forEach(p => { %>
@@ -17,7 +17,7 @@
         <td><%= p.partNumber  %></td>
         <td><%= p.description  %></td>
         <td><%= p.quantity  %></td>
-        <td><a href="/parts/<%= p._id %>">Details</a></td>
+        <td><a class="waves-effect waves-light btn green z-depth-4" href="/parts/<%= p._id %>">Details</a></td>
       </tr>
       
       <% }) %>

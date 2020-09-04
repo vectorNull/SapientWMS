@@ -6,8 +6,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 require('./config/database');
 const passport = require('passport');
-require('./config/passport')
-
+require('./config/passport');
+const methodOverride = require('method-override');
 let session = require('express-session');
 
 
@@ -29,6 +29,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(methodOverride('_method'));
 app.use(session({
   secret: 'SapientRocks!',
   resave: false,
