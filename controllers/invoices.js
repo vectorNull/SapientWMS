@@ -28,7 +28,6 @@ function create(req, res) {
 }
 
 function deleteInvoice(req, res) {
-    console.log('-----HERE------');
     Invoice.findByIdAndDelete(req.params.id, function (err, deletedInvoice) {
         res.redirect(`/parts/${deletedInvoice.part}`)
     });

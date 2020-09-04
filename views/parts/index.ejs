@@ -1,34 +1,36 @@
 <%- include('../partials/header') %>
 
-
-
-
 <table id="inventory" class="highlight centered responsive-table">
-<thead>
-  <tr>
-    <th><h4>Natl Stock Num (NSN)</h4></th>
-    <th><h4>Description</h4></th>
-    <th><h4>Qty in Stock</h4></th>
-    <th><h4>Part Details</h4></th>
-  </tr>
+  <thead>
+    <tr>
+      <th>
+        <h4>Natl Stock Num (NSN)</h4>
+      </th>
+      <th>
+        <h4>Description</h4>
+      </th>
+      <th>
+        <h4>Qty in Stock</h4>
+      </th>
+      <th>
+        <h4>Part Details</h4>
+      </th>
+    </tr>
   <tbody>
     <% parts.forEach(p => { %>
-      <tr>
-        <td><%= p.partNumber  %></td>
-        <td><%= p.description  %></td>
-        <td><%= p.quantity  %></td>
-        <td><a class="waves-effect waves-light btn green z-depth-4" href="/parts/<%= p._id %>">Details</a></td>
-      </tr>
-      
-      <% }) %>
+    <tr>
+      <td><%= p.partNumber  %></td>
+      <td><%= p.description  %></td>
+      <td><%= p.quantity  %></td>
+      <td><a class="waves-effect waves-light btn green z-depth-4" href="/parts/<%= p._id %>">Details</a></td>
+    </tr>
+
+    <% }) %>
     <tr>
 
     </tr>
   </tbody>
-</thead>
-
-
-
+  </thead>
 </table>
 
 <%- include('../partials/footer') %>

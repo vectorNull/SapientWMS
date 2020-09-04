@@ -1,6 +1,5 @@
 <%- include('../partials/header') %>
 
-
 <div id="show-page" class="container">
   <div class="row">
     <div class="col s4"><h5>Part Number:</h5></div>
@@ -13,7 +12,6 @@
     <div class="col s4"><%= part.quantity %></div>
   </div>
 </div><br><br>
-
 
 <table class="highlight centered responsive-table">
   <thead>
@@ -40,19 +38,4 @@
   </tbody>
 </table>
 
-
-
-<!-- <h1>Show Page</h1>
-  <h4>Part Number: </h4>
-  <div><%= part.partNumber %></div>
-  <h4>Description: </h4>
-  <div><%= part.description %></div>
-  <div>Quantity: </div>
-  <div><%= part.quantity %></div>
-  <div>Invoices:</div>
-  <ul>
-    <%- invoices.map(i => 
-      `<li>${i.invoiceNumber}</li>`
-    ).join(' ') %>
-  </ul> -->
 <%- include('../partials/footer') %>
